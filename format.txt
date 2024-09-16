@@ -1,0 +1,77 @@
+my-angular-app/
+├── e2e/                        # End-to-end (e2e) tests
+│   ├── src/                    # Source code for e2e tests
+│   ├── protractor.conf.js      # Protractor configuration
+│   └── tsconfig.e2e.json       # TypeScript configuration for e2e tests
+├── node_modules/               # Node.js modules
+├── src/                        # Application source code
+│   ├── app/                    # Main application components
+│   │   ├── components/         # Custom components
+│   │   ├── services/           # Services
+│   │   ├── models/             # Data models (if applicable)
+│   │   ├── app.component.ts    # Root component
+│   │   ├── app.module.ts       # Root module
+│   │   └── app-routing.module.ts # Routing module
+│   ├── assets/                 # Static assets like images, fonts
+│   ├── environments/           # Environment-specific configurations
+│   │   ├── environment.prod.ts # Production environment configuration
+│   │   └── environment.ts      # Development environment configuration
+│   ├── index.html              # Main HTML file
+│   ├── main.ts                 # Main entry point of the application
+│   ├── polyfills.ts            # Polyfills needed for Angular
+│   ├── styles.css              # Global styles
+│   ├── test.ts                 # Test entry point
+│   └── tsconfig.app.json       # TypeScript configuration for the application
+├── .editorconfig                # Editor configuration
+├── .gitignore                   # Git ignore rules
+├── angular.json                 # Angular CLI configuration
+├── package.json                 # npm package configuration
+├── README.md                    # Project README
+├── tsconfig.json                # TypeScript configuration
+└── tslint.json                  # TSLint configuration (if using TSLint)
+
+---------------------------------------------------------------------------------------------------------
+Backend By using ROR
+
+my_rails_app/
+├── app/
+│   ├── assets/                  # Contains static files like JavaScript, CSS, and images
+│   ├── controllers/             # Controllers manage the flow of data between models and views
+│   ├── helpers/                 # Helper modules for view-related logic
+│   ├── mailers/                 # Mailers for sending emails
+│   ├── models/                  # Models for interacting with the database
+│   ├── views/                   # Views (templates) for rendering HTML
+│   └── channels/                # ActionCable channels for WebSockets (if used)
+├── bin/                         # Binaries like rails, rake
+├── config/                      # Configuration files
+│   ├── environments/            # Environment-specific configurations
+│   ├── initializers/            # Initialization code for gems and settings
+│   ├── locales/                 # Internationalization (i18n) files
+│   ├── application.rb           # Main application configuration
+│   ├── database.yml             # Database configuration (MySQL settings)
+│   ├── routes.rb                # Routes configuration
+│   └── secrets.yml              # Secret keys and credentials (use credentials.yml.enc in Rails 5.2+)
+├── db/                          # Database schema and migrations
+│   ├── migrate/                 # Database migration files
+│   └── seeds.rb                 # Seed data for populating the database
+├── lib/                         # Custom libraries and modules
+│   ├── tasks/                   # Custom rake tasks
+│   └── my_custom_library.rb     # Example of a custom Ruby file
+├── log/                         # Log files
+├── public/                      # Static files served directly
+├── storage/                     # Active Storage files (if used)
+├── test/ or spec/               # Tests (Test::Unit by default, or RSpec if used)
+│   ├── controllers/             # Tests for controllers
+│   ├── models/                  # Tests for models
+│   ├── helpers/                 # Tests for helpers
+│   └── fixtures/                # Test data fixtures
+├── tmp/                         # Temporary files (e.g., cache, pid files)
+├── vendor/                      # Third-party code
+├── .gitignore                   # Git ignore rules
+├── Gemfile                       # Gem dependencies
+├── Gemfile.lock                  # Locked gem versions
+├── Rakefile                      # Rake tasks
+├── README.md                     # Project README
+└── config.ru                     # Rack configuration
+
+---------------------------------------------------------------------------------------------------------

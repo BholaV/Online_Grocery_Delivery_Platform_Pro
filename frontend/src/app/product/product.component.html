@@ -1,0 +1,37 @@
+<!-- Display Error Message -->
+<div *ngIf="error" class="alert alert-danger">
+  {{ error }}
+</div>
+
+<!-- Display Products or No Products Available -->
+ <div class="container-fluid bg-secondary p-2">
+   <div *ngIf="!error && productList.length > 0; else noProducts" class="container">
+     <div class="row">
+    <!-- Adjust column size to fit 4 cards per row -->
+    <div class="col-lg-3 col-md-4 col-sm-6 mb-4" *ngFor="let product of productList">
+      <div class="card h-100 shadow-sm border-light">
+        <img [src]="product.thumbnail" class="container p-2" style="width: 250px; height: 250px;" alt="{{ product.title }}">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title m-0">{{ product.title }}</h5>
+          <div class="mt-auto">
+            <p class="card-text">
+              <!-- <strong>Price:</strong> {{ product.price | currency }}<br>
+              <strong>Category:</strong> {{ product.category }}<br>
+              <strong>Brand:</strong> {{ product.brand }}<br>
+              <strong>Discount:</strong> {{ product.discountPercentage }}% -->
+            </p>
+            <a href="#" class="btn btn-primary btn-block">View Details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+<!-- No Products Template -->
+<ng-template #noProducts>
+  <div class="container">
+    <p>No products available.</p>
+  </div>
+</ng-template>
