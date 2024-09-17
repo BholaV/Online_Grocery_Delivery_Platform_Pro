@@ -1,0 +1,2 @@
+Install Ruby (using a version manager like rbenv or rvm).
+gem install rails -v 7.0.4
