@@ -1,0 +1,77 @@
+<div *ngIf="product" class="container mt-4">
+    <h1 class="mb-4">{{ product.title }}</h1>
+    <div class="row">
+        <!-- Product Image and Thumbnail -->
+        <div class="col-md-6">
+            <div class="mb-4">
+                <!-- Use currentImage for the main image -->
+                <img [src]="currentImage" class="img-fluid rounded shadow-sm" style="width: 500px; height: 500px;"
+                    alt="{{ product.title }}">
+                    <div class="d-flex  justify-content-around m-2 w-75">
+                        <button class="btn btn-secondary p-2 w-75 m-1">Add to Cart</button>
+                        <button class="btn btn-primary w-75 m-1">Buy Now</button>
+                    </div>
+            </div>
+            <div *ngIf="product.images.length > 0">
+                <h4 class="mb-3">Additional Images:</h4>
+                <div class="d-flex flex-wrap">
+                    <img *ngFor="let image of product.images" [src]="image" class="img-thumbnail me-2 mb-2"
+                        style="width: 150px; height: 150px; cursor: pointer;" (click)="changeImage(image)"
+                        alt="Additional Image">
+                </div>
+            </div>
+            <h4 class="mb-3">Meta Information</h4>
+            <ul class="list-unstyled d-flex">
+                <li>
+                    <img [src]="product.meta.qrCode" alt="QR Code" style="width: 100px; height: 100px;"> <br>&nbsp;
+                    <!-- <strong>QR Code:</strong> -->
+                    <strong>Barcode:</strong> {{ product.meta.barcode }}
+                </li>
+            </ul>
+        </div>
+
+        <!-- Product Details -->
+        <div class="col-md-6">
+            <h3 class="mb-3">Description</h3>
+            <p class="mb-4">{{ product.description }}</p>
+
+            <h4 class="mb-3">Details</h4>
+            <ul class="list-unstyled">
+                <li><strong>Category:</strong> {{ product.category }}</li>
+                <li><strong>Brand:</strong> {{ product.brand }}</li>
+                <li><strong>Price:</strong> ${{ product.price.toFixed(2) }}</li>
+                <li><strong>Discount:</strong> {{ product.discountPercentage }}% off</li>
+                <li><strong>Rating:</strong> {{ product.rating }} out of 5</li>
+                <li><strong>Stock:</strong> {{ product.stock }} units</li>
+                <li><strong>Availability Status:</strong> {{ product.availabilityStatus }}</li>
+                <li><strong>Warranty Information:</strong> {{ product.warrantyInformation }}</li>
+                <li><strong>Return Policy:</strong> {{ product.returnPolicy }}</li>
+                <li><strong>Minimum Order Quantity:</strong> {{ product.minimumOrderQuantity }}</li>
+            </ul>
+
+            <h4 class="mb-3">Dimensions</h4>
+            <ul class="list-unstyled">
+                <li><strong>Width:</strong> {{ product.dimensions.width }} cm</li>
+                <li><strong>Height:</strong> {{ product.dimensions.height }} cm</li>
+                <li><strong>Depth:</strong> {{ product.dimensions.depth }} cm</li>
+            </ul>
+
+            <h4 class="mb-3">Shipping Information</h4>
+            <p class="mb-4">{{ product.shippingInformation }}</p>
+            
+        </div>
+    </div>
+    <div>
+        <h4 class="mb-3">Reviews</h4>
+        <div class="row">
+          <div *ngFor="let review of product.reviews" class="col-md-4 mb-4">
+            <div class="p-3 rounded shadow-sm h-100">
+              <p><strong>{{ review.reviewerName }} ({{ review.rating }} stars)</strong></p>
+              <p>{{ review.comment }}</p>
+              <p><small class="text-muted">{{ review.date.split("T")[0] }} {{ review.date.split("T")[1].split(".")[0] }}</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+</div>

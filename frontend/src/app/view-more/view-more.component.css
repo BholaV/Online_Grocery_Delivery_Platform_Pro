@@ -1,0 +1,37 @@
+/* Custom Styles for ViewMoreComponent */
+.container {
+    background-color: #f8f9fa;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+  }
+  
+  h1, h3, h4 {
+    color: #343a40;
+  }
+  
+  .img-thumbnail {
+    border: 2px solid #dee2e6;
+  }
+  
+  .img-fluid {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .list-unstyled li {
+    padding: 0.5rem 0;
+  }
+  
+  .border {
+    border-color: #ced4da !important;
+  }
+  
+  .shadow-sm {
+    box-shadow: 0 0 0.125rem rgba(0, 0, 0, 0.1);
+  }
+  
+  .rounded {
+    border-radius: 0.375rem;
+  }
+  

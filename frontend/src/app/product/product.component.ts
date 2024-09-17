@@ -3,11 +3,14 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { catchError, map } from 'rxjs/operators';
 import { of } from 'rxjs';
+import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+import { ViewMoreComponent } from '../view-more/view-more.component';
 
 @Component({
   selector: 'app-product',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,ViewMoreComponent],
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css'],
 })
@@ -15,7 +18,7 @@ export class ProductComponent {
   productList: any[] = [];
   error: string | null = null;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,private router: Router) { }
 
   ngOnInit(): void {
     this.fetchProducts();
@@ -32,11 +35,13 @@ export class ProductComponent {
     ).subscribe(
       products => {
         this.productList = products;
-        console.log(this.productList);
-        console.log("call....product..");
+        // console.log(this.productList);
+        // console.log("call....product..");
       }
     );
   }
+  viewMore(product: any): void {
+    this.router.navigate([`/view-more/${product.id}`], { state: { product } });
+  }
   
-
 }
